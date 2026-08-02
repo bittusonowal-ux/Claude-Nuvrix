@@ -71,8 +71,8 @@ export const metadata: Metadata = {
     creator: siteConfig.twitterHandle,
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: [{ url: "/images/nuvrix-logo.svg", type: "image/svg+xml" }],
+    shortcut: "/images/nuvrix-logo.svg",
     apple: "/apple-touch-icon.png",
   },
   alternates: {
@@ -107,4 +107,3 @@ export default function RootLayout({
     </html>
   );
 }
-
