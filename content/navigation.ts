@@ -4,11 +4,11 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: "What We Do", href: "/services" },
-  { label: "How We Think", href: "/#workflows" },
-  { label: "Client Impact", href: "/work" },
-  { label: "Who We Are", href: "/about" },
-  { label: "Engagement Models", href: "/pricing" },
+  { label: "What we do", href: "/services" },
+  { label: "How we think", href: "/#workflows" },
+  { label: "Client impact", href: "/work" },
+  { label: "Who we are", href: "/about" },
+  { label: "Engagement models", href: "/pricing" },
 ];
 
 export const footerLinks = {
@@ -18,10 +18,10 @@ export const footerLinks = {
     { label: "Search Intelligence & Programmatic Growth", href: "/services/seo" },
   ],
   organization: [
-    { label: "Who We Are", href: "/about" },
-    { label: "Client Impact & Outcomes", href: "/work" },
-    { label: "Engagement Models", href: "/pricing" },
-    { label: "Systems Architecture Audit", href: "/contact" },
+    { label: "Who we are", href: "/about" },
+    { label: "Client impact & outcomes", href: "/work" },
+    { label: "Engagement models", href: "/pricing" },
+    { label: "Systems architecture audit", href: "/contact" },
   ],
   contact: {
     email: "hello@nuvrix.in",

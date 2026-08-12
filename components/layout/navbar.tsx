@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { Logo } from "@/components/layout/logo";
 import { MobileMenu } from "@/components/layout/mobile-menu";
-import { BookCallButton } from "@/components/ui/book-call-button";
 import { navLinks } from "@/content/navigation";
 import { useScrollThreshold } from "@/hooks/use-scroll-threshold";
 import { cn } from "@/lib/utils";
@@ -17,34 +16,33 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-sticky-nav transition-all duration-base ease-out-expo",
+          "fixed inset-x-0 top-0 z-sticky-nav transition-all duration-300 ease-out",
           scrolled
             ? "glass h-16 shadow-2xl border-b border-white/10"
             : "h-20 border-b border-transparent bg-transparent"
         )}
       >
         <div className="section-container flex h-full items-center justify-between">
-          <Logo />
+          {/* Logo: Circuit N by default, expands NUVRIX on hover */}
+          <Logo expandOnHover={true} />
 
+          {/* Desktop Nav: Resized with sentence case (first letter capital) */}
           <nav
-            className="hidden items-center gap-7 lg:gap-8 md:flex"
+            className="hidden items-center gap-7 lg:gap-9 md:flex"
             aria-label="Primary"
           >
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-xs font-semibold uppercase tracking-wider text-slate-300 transition-colors duration-fast hover:text-white"
+                className="text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white capitalize"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden md:block">
-            <BookCallButton size="md" label="Request Consultation" />
-          </div>
-
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"

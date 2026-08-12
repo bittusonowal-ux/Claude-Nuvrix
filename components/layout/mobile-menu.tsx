@@ -33,13 +33,13 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -16 }}
           transition={{ duration: 0.3, ease: EASE.out }}
-          className="fixed inset-0 z-modal flex flex-col bg-[#070709]/95 backdrop-blur-2xl md:hidden"
+          className="fixed inset-0 z-modal flex flex-col bg-[#070709]/98 backdrop-blur-2xl md:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation menu"
         >
           <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
-            <Logo />
+            <Logo expandOnHover={false} />
             <button
               onClick={onClose}
               aria-label="Close menu"
@@ -57,13 +57,13 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           </div>
 
           <nav className="flex flex-1 flex-col justify-center px-8" aria-label="Mobile">
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               {navLinks.map((link) => (
-                <li key={link.label} className="border-b border-white/5 pb-3">
+                <li key={link.label} className="border-b border-white/5 pb-3.5">
                   <Link
                     href={link.href}
                     onClick={onClose}
-                    className="flex items-center text-lg font-semibold uppercase tracking-wider text-slate-200 transition-colors hover:text-primary-light"
+                    className="flex items-center text-lg font-medium capitalize text-slate-200 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -73,7 +73,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           </nav>
 
           <div className="border-t border-white/10 p-8 pb-10">
-            <BookCallButton size="lg" label="Request Consultation" className="w-full justify-center" />
+            <BookCallButton size="lg" label="Schedule Executive Briefing" className="w-full justify-center" />
           </div>
         </m.div>
       )}
