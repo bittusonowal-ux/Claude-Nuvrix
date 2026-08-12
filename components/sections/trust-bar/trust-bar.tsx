@@ -4,38 +4,56 @@ import { m } from "framer-motion";
 import { StaggerGroup, staggerItem } from "@/components/motion/scroll-reveal";
 import { trustBarContent } from "@/content/trust-bar";
 
-/**
- * Trust Bar — Section 3 per blueprint. Purpose: reduce bounce in first
- * 3 seconds with immediate credibility, even without real client logos
- * yet. Uses capability metrics instead (honesty signaling > vague logos
- * of unknown companies, per Trust Psychology table).
- */
 export function TrustBar() {
   return (
     <section
-      className="border-y border-border bg-surface/30 py-10"
-      aria-label="Trust indicators"
+      className="border-y border-white/5 bg-[#0b0d18]/60 py-12 relative overflow-hidden backdrop-blur-md"
+      aria-label="Executive Trust & Technology Ecosystem"
     >
       <div className="section-container">
+        {/* Capability Metrics Grid */}
         <StaggerGroup
           staggerMs={80}
-          className="grid grid-cols-2 gap-8 sm:grid-cols-4"
+          className="grid grid-cols-2 gap-8 md:grid-cols-4 pb-10 border-b border-white/5"
         >
-          {trustBarContent.items.map((item) => (
+          {trustBarContent.metrics.map((item) => (
             <m.div
               key={item.label}
               variants={staggerItem}
-              className="text-center sm:text-left"
+              className="text-left group"
             >
-              <p className="font-display text-2xl font-bold text-text-primary">
-                {item.metric}
+              <p className="font-display text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-indigo-300">
+                {item.value}
               </p>
-              <p className="mt-1 text-xs text-text-secondary sm:text-sm">
+              <p className="mt-1.5 text-sm font-semibold text-white">
                 {item.label}
+              </p>
+              <p className="text-xs text-slate-400 mt-0.5">
+                {item.sub}
               </p>
             </m.div>
           ))}
         </StaggerGroup>
+
+        {/* Strategic Technology Alliances Marquee */}
+        <div className="pt-8">
+          <p className="text-center text-[11px] font-mono uppercase tracking-[0.2em] text-slate-400 mb-6">
+            {trustBarContent.eyebrow}
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            {trustBarContent.ecosystem.map((tech) => (
+              <div
+                key={tech.name}
+                className="inline-flex items-center gap-2 rounded-lg border border-white/5 bg-white/[0.03] px-3.5 py-2 text-xs font-medium text-slate-300 transition-all hover:border-primary/40 hover:bg-white/[0.06] hover:text-white"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                <span className="font-semibold">{tech.name}</span>
+                <span className="text-[10px] text-slate-500 font-mono">({tech.category})</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

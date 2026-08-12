@@ -6,24 +6,18 @@ import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { testimonialsContent } from "@/content/testimonials";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
-/**
- * Testimonials — Section 10 per blueprint. Auto-advances every 5s,
- * pauses on hover, disabled entirely on touch (swipe-gesture instead,
- * so auto-advance doesn't fight the user's thumb mid-read). Large
- * translucent quote-mark typography behind the quote — editorial
- * technique per Section-by-Section Visual Storytelling table.
- */
 export function Testimonials() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const reducedMotion = useReducedMotion();
-  const total = testimonialsContent.length;
+  const list = testimonialsContent.testimonials;
+  const total = list.length;
 
   useEffect(() => {
     if (paused || reducedMotion) return;
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % total);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(interval);
   }, [paused, reducedMotion, total]);
 
@@ -35,29 +29,28 @@ export function Testimonials() {
     }
   }
 
-  const testimonial = testimonialsContent[active];
+  const testimonial = list[active];
 
   return (
-    <section className="section" aria-label="Client testimonials">
+    <section className="section bg-[#080a13] relative overflow-hidden" aria-label="Executive client testimonials" id="testimonials">
       <div className="section-container">
-        <ScrollReveal className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-text-primary">
-            What clients say.
+        <ScrollReveal className="mx-auto max-w-3xl text-center">
+          <div className="badge-pill mb-4">
+            <span>{testimonialsContent.eyebrow}</span>
+          </div>
+          <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+            {testimonialsContent.headline}
           </h2>
+          <p className="mt-4 text-base text-slate-400 md:text-lg">
+            {testimonialsContent.subhead}
+          </p>
         </ScrollReveal>
 
         <div
-          className="relative mx-auto mt-12 max-w-2xl"
+          className="relative mx-auto mt-12 max-w-3xl"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute -left-2 -top-10 select-none font-display text-[120px] leading-none text-primary/5"
-          >
-            &ldquo;
-          </span>
-
           <AnimatePresence mode="wait">
             <m.div
               key={active}
@@ -68,38 +61,53 @@ export function Testimonials() {
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.6 }}
-              className="glass relative cursor-grab rounded-xl p-8 text-center active:cursor-grabbing sm:p-10"
+              transition={{ duration: 0.4 }}
+              className="rounded-2xl border border-white/10 bg-[#0f1224]/90 p-8 md:p-10 backdrop-blur-2xl shadow-2xl relative"
             >
-              <p className="text-lg text-text-primary sm:text-xl">
-                {testimonial.quote}
+              {/* Star Rating & Result Pill */}
+              <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-6">
+                <div className="flex text-amber-400 gap-1 text-sm">
+                  {"★".repeat(testimonial.rating)}
+                </div>
+                <span className="font-mono text-xs font-bold text-emerald-400 bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-500/20">
+                  {testimonial.result}
+                </span>
+              </div>
+
+              <p className="text-base md:text-lg leading-relaxed text-slate-200 font-medium italic">
+                &ldquo;{testimonial.quote}&rdquo;
               </p>
-              <p className="mt-6 text-sm font-semibold text-text-primary">
-                {testimonial.name}
-              </p>
-              <p className="text-xs text-text-secondary">{testimonial.role}</p>
+
+              <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+                <div>
+                  <p className="font-display text-base font-bold text-white">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    {testimonial.role} · <span className="text-primary-light font-semibold">{testimonial.company}</span>
+                  </p>
+                </div>
+                <span className="text-xs font-mono text-slate-400 hidden sm:block">
+                  📍 {testimonial.location}
+                </span>
+              </div>
             </m.div>
           </AnimatePresence>
 
-          <div className="mt-6 flex justify-center gap-2">
-            {testimonialsContent.map((_, i) => (
+          {/* Dots Indicator */}
+          <div className="mt-8 flex justify-center gap-2">
+            {list.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
                 aria-label={`Show testimonial ${i + 1} of ${total}`}
-                aria-current={active === i}
-                className={`h-2 rounded-full transition-all duration-base ${
-                  active === i ? "w-6 bg-primary" : "w-2 bg-border"
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  active === i ? "w-8 bg-primary shadow-glow-primary" : "w-2.5 bg-white/20 hover:bg-white/40"
                 }`}
               />
             ))}
           </div>
         </div>
-
-        <p className="mt-6 text-center text-xs text-text-secondary">
-          Placeholder testimonials — real client feedback added as
-          projects complete.
-        </p>
       </div>
     </section>
   );

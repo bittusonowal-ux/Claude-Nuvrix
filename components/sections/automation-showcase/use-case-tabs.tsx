@@ -18,7 +18,7 @@ export function UseCaseTabs() {
       >
         {useCases.map((useCase, i) => (
           <button
-            key={useCase.persona}
+            key={useCase.id}
             role="tab"
             aria-selected={active === i}
             onClick={() => setActive(i)}
@@ -29,7 +29,7 @@ export function UseCaseTabs() {
                 : "glass text-text-secondary hover:text-text-primary"
             )}
           >
-            {useCase.persona}
+            {useCase.label}
           </button>
         ))}
       </div>
@@ -45,7 +45,7 @@ export function UseCaseTabs() {
             transition={{ duration: 0.3 }}
             className="max-w-xl text-base text-text-secondary"
           >
-            {useCases[active].outcome}
+            {useCases[active].description}
           </m.p>
         </AnimatePresence>
       </div>

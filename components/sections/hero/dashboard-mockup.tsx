@@ -2,30 +2,37 @@
 
 import { m, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { heroContent } from "@/content/hero";
 import { EASE } from "@/lib/motion";
 
 interface DashboardMockupProps {
   reducedMotion: boolean;
 }
 
-/**
- * The hero's signature visual: a glass card showing an abstract
- * automation chain (Lead -> AI Qualifies -> Books Call -> Close).
- * Connection lines self-draw via SVG stroke-dashoffset, staggered
- * 200ms apart, nodes pulse gently once their inbound line completes.
- * Subtle mouse-parallax on desktop only. Hidden entirely below 1024px
- * per blueprint mobile spec (rendered by parent conditionally).
- */
+const pipelineNodes = [
+  { id: "lead", label: "Inbound Lead", sub: "Omnichannel capture", icon: "📥", status: "Received" },
+  { id: "agent", label: "Claude 3.5 Agent", sub: "Intent & budget scoring", icon: "🧠", status: "Score: 98/100" },
+  { id: "enrich", label: "Data Enrichment", sub: "CRM & LinkedIn sync", icon: "⚡", status: "Enriched" },
+  { id: "schedule", label: "Auto-Scheduler", sub: "Instant WhatsApp slot", icon: "📅", status: "Slot Booked" },
+  { id: "revenue", label: "Revenue Telemetry", sub: "Deal pipeline active", icon: "📈", status: "₹2.5L Pipeline" },
+];
+
+const mockLogs = [
+  "⚡ [0.12s] Inbound lead captured via Meta API",
+  "🧠 [0.35s] Claude 3.5: Lead qualified (High Intent)",
+  "🔄 [0.68s] HubSpot & PostgreSQL auto-synced",
+  "📲 [1.10s] WhatsApp VIP calendar invite confirmed",
+  "📊 [1.45s] Telemetry: Speed-to-lead under 24 seconds",
+];
+
 export function DashboardMockup({ reducedMotion }: DashboardMockupProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [linesDrawn, setLinesDrawn] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
+  const [logIndex, setLogIndex] = useState(0);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  // Parallax moves opposite to mouse position, 8-12px range per spec
-  const translateX = useTransform(mouseX, [-1, 1], [10, -10]);
-  const translateY = useTransform(mouseY, [-1, 1], [10, -10]);
+  const translateX = useTransform(mouseX, [-1, 1], [8, -8]);
+  const translateY = useTransform(mouseY, [-1, 1], [8, -8]);
 
   useEffect(() => {
     if (reducedMotion) return;
@@ -44,89 +51,117 @@ export function DashboardMockup({ reducedMotion }: DashboardMockupProps) {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [reducedMotion, mouseX, mouseY]);
 
-  const nodes = heroContent.flowNodes;
-  const nodePositions = [
-    { x: 20, y: 30 },
-    { x: 180, y: 90 },
-    { x: 20, y: 150 },
-    { x: 180, y: 210 },
-  ];
+  // Cycle through active pipeline steps
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % pipelineNodes.length);
+      setLogIndex((prev) => (prev + 1) % mockLogs.length);
+    }, 2400);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <m.div
       ref={containerRef}
       style={reducedMotion ? undefined : { x: translateX, y: translateY }}
-      initial={{ opacity: 0, x: 40 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, ease: EASE.out, delay: 1.2 }}
-      onAnimationComplete={() => setLinesDrawn(true)}
-      className="glass relative hidden h-[280px] w-full max-w-[420px] overflow-hidden rounded-xl p-6 shadow-lg lg:block"
-      aria-hidden="true"
+      initial={{ opacity: 0, scale: 0.96, y: 30 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: EASE.out, delay: 0.4 }}
+      className="relative w-full max-w-[540px] overflow-hidden rounded-2xl border border-white/10 bg-[#0d101d]/90 p-6 shadow-2xl backdrop-blur-2xl"
+      aria-label="Autonomous AI Pipeline Simulation"
     >
-      <svg
-        className="absolute inset-0 h-full w-full"
-        viewBox="0 0 260 260"
-        fill="none"
-      >
-        {/* Connection lines: lead->qualify, qualify->book, book->close */}
-        {[0, 1, 2].map((i) => {
-          const from = nodePositions[i];
-          const to = nodePositions[i + 1];
+      {/* Ambient background glow */}
+      <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/20 blur-[80px]" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-cyan-500/15 blur-[80px]" />
+
+      {/* Header bar */}
+      <div className="flex items-center justify-between border-b border-white/10 pb-4">
+        <div className="flex items-center gap-2">
+          <span className="relative flex h-3 w-3">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
+          </span>
+          <span className="font-mono text-xs font-semibold tracking-wider text-slate-200">
+            NUVRIX MULTI-AGENT RUNTIME
+          </span>
+        </div>
+        <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-slate-300">
+          <span className="text-emerald-400">● 99.9% SLA</span>
+          <span className="text-slate-500">|</span>
+          <span>v2.6 Edge</span>
+        </div>
+      </div>
+
+      {/* Pipeline Visual Flow */}
+      <div className="relative my-6 space-y-3">
+        {pipelineNodes.map((node, i) => {
+          const isActive = activeStep === i;
+          const isPassed = activeStep > i;
+
           return (
-            <m.line
-              key={i}
-              x1={from.x + 40}
-              y1={from.y + 12}
-              x2={to.x}
-              y2={to.y + 12}
-              stroke="url(#lineGradient)"
-              strokeWidth="2"
-              strokeDasharray="4 4"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={
-                linesDrawn
-                  ? { pathLength: 1, opacity: 1 }
-                  : { pathLength: 0, opacity: 0 }
-              }
-              transition={{
-                duration: reducedMotion ? 0.01 : 1.5,
-                ease: EASE.out,
-                delay: reducedMotion ? 0 : i * 0.2,
-              }}
-            />
+            <div
+              key={node.id}
+              className={`relative flex items-center justify-between rounded-xl border p-3 transition-all duration-300 ${
+                isActive
+                  ? "border-primary/60 bg-primary/10 shadow-[0_0_20px_rgba(99,102,241,0.25)]"
+                  : isPassed
+                  ? "border-emerald-500/30 bg-emerald-950/10 text-slate-300"
+                  : "border-white/5 bg-white/[0.02] text-slate-400"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className={`flex h-9 w-9 items-center justify-center rounded-lg text-base ${
+                    isActive
+                      ? "bg-primary text-white shadow-glow-primary"
+                      : isPassed
+                      ? "bg-emerald-500/20 text-emerald-300"
+                      : "bg-white/5 text-slate-400"
+                  }`}
+                >
+                  {node.icon}
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold text-white">{node.label}</span>
+                    {isActive && (
+                      <span className="rounded bg-primary/30 px-1.5 py-0.5 text-[9px] font-bold text-primary-light">
+                        PROCESSING
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-[11px] text-slate-400">{node.sub}</p>
+                </div>
+              </div>
+
+              <div className="text-right">
+                <span
+                  className={`font-mono text-xs font-medium ${
+                    isActive
+                      ? "text-cyan-300"
+                      : isPassed
+                      ? "text-emerald-400"
+                      : "text-slate-500"
+                  }`}
+                >
+                  {node.status}
+                </span>
+              </div>
+            </div>
           );
         })}
-        <defs>
-          <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#6C63FF" />
-            <stop offset="100%" stopColor="#00D4FF" />
-          </linearGradient>
-        </defs>
-      </svg>
+      </div>
 
-      {nodes.map((node, i) => (
-        <m.div
-          key={node.id}
-          className="glass absolute flex h-10 items-center rounded-md border border-glass-border px-3 text-xs font-medium text-text-primary"
-          style={{ left: nodePositions[i].x, top: nodePositions[i].y }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 1.2 + i * 0.15 }}
-        >
-          <span
-            className="mr-2 h-1.5 w-1.5 rounded-full bg-primary"
-            style={
-              !reducedMotion
-                ? {
-                    animation: `glow-pulse 2s ease-in-out infinite`,
-                    animationDelay: `${1.8 + i * 0.15}s`,
-                  }
-                : undefined
-            }
-          />
-          {node.label}
-        </m.div>
-      ))}
+      {/* Simulated Live Terminal Execution Stream */}
+      <div className="rounded-xl border border-white/10 bg-black/60 p-3 font-mono text-[11px] text-slate-300">
+        <div className="mb-1.5 flex items-center justify-between text-[10px] text-slate-500">
+          <span>EVENT STREAM TELEMETRY</span>
+          <span className="animate-pulse text-primary-light">LIVE BUFFER</span>
+        </div>
+        <p className="text-cyan-300 transition-all duration-300">
+          ❯ {mockLogs[logIndex]}
+        </p>
+      </div>
     </m.div>
   );
 }

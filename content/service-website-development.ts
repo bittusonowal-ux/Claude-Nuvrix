@@ -1,57 +1,61 @@
-export const websiteDevContent = {
+export const websiteDevelopmentContent = {
   hero: {
-    eyebrow: "WEBSITE DEVELOPMENT",
-    headline: "Websites built to convert, not just look good.",
+    eyebrow: "CONSULTING PRACTICE: WEB SYSTEMS",
+    headline: "High-Performance Digital Flagships & Next.js 15 Web Engines",
     subhead:
-      "Fast, modern websites on the same architecture powering the world's best tech companies — designed around one goal: turning visitors into booked calls.",
+      "We engineer conversion-obsessed web platforms built on Next.js 15, React 19, and Tailwind CSS — delivering sub-second speed, 100/100 Core Web Vitals, and seamless automated booking funnels.",
   },
   capabilities: [
     {
-      title: "Conversion-First Design",
+      title: "Next.js 15 Server-Side Rendered (SSR) Engines",
       description:
-        "Every page is structured around a single clear next step — not buried under decoration.",
+        "Lightning-fast page loads with zero hydration delay. Global edge caching on Vercel delivers sub-100ms TTFB worldwide.",
     },
     {
-      title: "Built for Speed",
+      title: "Bespoke Glassmorphism & Cyber-Obsidian UI/UX",
       description:
-        "Next.js architecture, optimized images, and minimal JavaScript — fast load times that keep visitors from bouncing.",
+        "High-contrast, luxury dark mode visual aesthetics inspired by Linear, Stripe, and Vercel — engineered to command instant executive trust.",
     },
     {
-      title: "Fully Responsive",
+      title: "Interactive Automated Booking & Conversion Funnels",
       description:
-        "Designed mobile-first, since most of your visitors will find you on their phone first.",
+        "Embedded interactive calculators, Calendly modals, and 1-click WhatsApp hooks strategically placed to maximize qualified pipeline capture.",
     },
     {
-      title: "SEO-Ready From Day One",
+      title: "Headless Content Management Architecture",
       description:
-        "Clean semantic structure, proper metadata, and fast performance — the technical foundation SEO depends on.",
+        "Structured, type-safe content layers that allow non-technical teams to update copy, case studies, and pricing without touching codebase JSX.",
     },
     {
-      title: "Easy to Update",
+      title: "100/100 Core Web Vitals & Accessibility Standard",
       description:
-        "Content structured for easy edits, so your site doesn't go stale the moment we hand it over.",
+        "Pixel-perfect responsiveness across all screen dimensions with WCAG 2.1 AA accessibility and full keyboard navigation support.",
     },
     {
-      title: "Landing Pages for Campaigns",
+      title: "Direct GitHub Code Repository Ownership",
       description:
-        "Dedicated high-converting pages for specific offers, launches, or ad campaigns.",
+        "No lock-in to proprietary web builders. You receive the complete production repository ready for automated CI/CD deployments.",
     },
   ],
+  processNote:
+    "Every digital flagship is engineered in high-velocity 14-day delivery sprints with weekly interactive prototype reviews.",
   faqs: [
     {
-      question: "How long does a website build take?",
+      question: "Why Next.js instead of WordPress or Webflow?",
       answer:
-        "Most website builds take 3-5 weeks depending on scope. We'll confirm an exact timeline after understanding your requirements.",
+        "Next.js 15 provides unmatched security, zero plugin bloat, instant sub-second page loads, and unlimited flexibility to embed custom AI agents, APIs, and real-time calculators directly into the user experience.",
     },
     {
-      question: "Can I update the website myself after launch?",
+      question: "Will our website look good and function flawlessly on mobile devices?",
       answer:
-        "Yes — we structure content so common updates (text, images) don't require touching code. For anything bigger, our Website Maintenance service covers ongoing changes.",
+        "Yes, 100%. We design mobile-first with adaptive touch targets (minimum 48px), optimized touch gestures, and ultra-smooth mobile navigation drawers.",
     },
     {
-      question: "Do you redesign existing websites or only build new ones?",
+      question: "Can we easily update text and blog posts ourselves?",
       answer:
-        "Both. Many clients come to us with an outdated site that needs a conversion-focused rebuild, not just a fresh coat of paint.",
+        "Yes. All content is organized in clean, typed configuration files or headless CMS fields where you can edit copy in plain English.",
     },
   ],
 };
+
+export const websiteDevContent = websiteDevelopmentContent;

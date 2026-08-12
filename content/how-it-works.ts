@@ -1,31 +1,40 @@
 export const howItWorksContent = {
-  eyebrow: "THE PROCESS",
-  headline: "From first call to running system.",
-  subhead: "No jargon, no black box — here's exactly what happens.",
+  eyebrow: "THE NUVRIX CONSULTING FRAMEWORK",
+  headline: "From Diagnostic Audit to Live Autonomous Execution",
+  subhead:
+    "A structured, transparent 4-stage engineering delivery model designed for rapid time-to-value without disrupting active business operations.",
   steps: [
     {
       number: "01",
-      title: "Discover",
+      title: "Systems Diagnostic & AI Opportunity Audit",
+      phase: "Week 1",
       description:
-        "A free strategy call to understand your workflow, bottlenecks, and goals.",
+        "We dissect your existing tech stack, lead funnels, and operational bottlenecks to calculate exact ROI potential and map out high-impact automation vectors.",
+      deliverable: "Comprehensive Systems Architecture & ROI Feasibility Map",
     },
     {
       number: "02",
-      title: "Design",
+      title: "Architectural Blueprinting & Data Flow Design",
+      phase: "Week 1–2",
       description:
-        "We map the exact automation, website, or SEO plan built around your business.",
+        "We design end-to-end multi-agent logic, webhook triggers, API data schemas, and high-converting UI wireframes tailored specifically to your target ICP.",
+      deliverable: "Interactive Interactive Prototype & Data Governance Plan",
     },
     {
       number: "03",
-      title: "Automate",
+      title: "Production-Grade Engineering & Deployment",
+      phase: "Week 2–3",
       description:
-        "We build and deploy — clean, tested, and ready to run without babysitting.",
+        "Our engineers build and integrate your custom AI agents, deploy Next.js 15 web systems, test edge-case fallbacks, and sync live CRM databases.",
+      deliverable: "Fully Deployed, Tested & Verified Production Infrastructure",
     },
     {
       number: "04",
-      title: "Scale",
+      title: "Autonomous Execution & Continuous SLA Governance",
+      phase: "Ongoing",
       description:
-        "We monitor, refine, and expand the system as your business grows.",
+        "Your systems go live. We provide continuous model fine-tuning, uptime monitoring, and quarterly system upgrades to ensure compounding efficiency.",
+      deliverable: "100% IP/Code Handover, Team Training & Ongoing SLA Support",
     },
   ],
 };

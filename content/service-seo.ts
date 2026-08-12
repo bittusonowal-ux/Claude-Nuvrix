@@ -1,57 +1,54 @@
 export const seoContent = {
   hero: {
-    eyebrow: "SEO",
-    headline: "Get found by the clients already searching for you.",
+    eyebrow: "CONSULTING PRACTICE: SEARCH INTELLIGENCE",
+    headline: "Search Intelligence & Programmatic Growth Engines",
     subhead:
-      "Technical SEO built in from day one, paired with a content strategy designed for long-term organic growth — not quick tricks that fade in months.",
+      "We design semantic search architectures, technical schema graphs, and programmatic content systems that dominate high-intent keyword categories and capture enterprise buyers.",
   },
   capabilities: [
     {
-      title: "Technical SEO Foundation",
+      title: "Technical Schema Graph & Semantic Search Architecture",
       description:
-        "Site speed, structured data, and crawlability handled properly — the unglamorous work that actually moves rankings.",
+        "Comprehensive JSON-LD structured data (Organization, Services, FAQ, Case Studies) that enables search engines and AI LLM search bots (SearchGPT, Perplexity) to index and cite your brand with high authority.",
     },
     {
-      title: "Local SEO",
+      title: "High-Intent Keyword & Category Domination",
       description:
-        "Optimized for the searches that bring nearby customers to your door, not just broad national terms.",
+        "Laser-targeted mapping of decision-maker search queries, ensuring your firm ranks prominently for high-value transactional searches rather than vanity traffic.",
     },
     {
-      title: "Content Strategy",
+      title: "Programmatic SEO Architecture & Topic Clusters",
       description:
-        "Keyword research and content planning built around what your ideal clients are actually typing into Google.",
+        "Automated generation of hundreds of high-ranking service and location-specific landing pages with unique, high-value content.",
     },
     {
-      title: "On-Page Optimization",
+      title: "Core Web Vitals & Crawl Budget Optimization",
       description:
-        "Every page structured to help search engines — and visitors — understand exactly what you offer.",
+        "Ultra-clean DOM tree structures, sub-50ms server response times, and automated XML sitemap / robots.txt orchestration.",
     },
     {
-      title: "Ongoing Monitoring",
+      title: "Local Search & High-Ticket Map Pack Optimization",
       description:
-        "SEO isn't a one-time setup — we track rankings and adjust the strategy as search algorithms evolve.",
+        "Optimized Google Business Profile integration, localized schema citations, and geo-targeted landing page funnels.",
     },
     {
-      title: "Review & Reputation Signals",
+      title: "Real-Time Pipeline Telemetry & Keyword Tracking",
       description:
-        "Automated review requests and reputation tracking that feed directly into local search visibility.",
+        "Monthly executive reports detailing organic impressions, search rankings, organic lead acquisitions, and revenue attribution.",
     },
   ],
+  processNote:
+    "We integrate technical SEO directly into the Next.js build pipeline so every page is pre-rendered with optimal metadata out of the box.",
   faqs: [
     {
-      question: "How long until I see SEO results?",
+      question: "How long before we see tangible organic traffic and leads?",
       answer:
-        "Meaningful movement typically starts within 2-3 months, with compounding results over 6-12 months. Anyone promising overnight rankings isn't doing real SEO.",
+        "With our programmatic and technical foundation, search engines index new Next.js pages within days. Meaningful commercial ranking gains typically occur within 60 to 90 days as domain authority builds.",
     },
     {
-      question: "Do I need a new website for SEO to work?",
+      question: "How does your approach prepare our business for AI Search engines like ChatGPT and Perplexity?",
       answer:
-        "Not necessarily — we can often improve technical SEO on your existing site. A rebuild is only recommended if the current site has fundamental structural issues.",
-    },
-    {
-      question: "Is SEO worth it for a local business?",
-      answer:
-        "Especially for local businesses — local search intent is high-conviction, and ranking well for nearby searches often converts better than paid ads.",
+        "We implement deep semantic schema graphs, clear factual entities, and high-authority contextual answers that AI crawlers prioritize when generating direct answers to user queries.",
     },
   ],
 };

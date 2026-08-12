@@ -4,86 +4,87 @@ import { m } from "framer-motion";
 import { BookCallButton } from "@/components/ui/book-call-button";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { CheckIcon } from "@/components/ui/icons";
-import { cn } from "@/lib/utils";
 import { pricingContent } from "@/content/pricing";
 import { fadeOnly } from "@/lib/motion";
 
-/**
- * Pricing Preview — Section 11 per blueprint. Deliberately the
- * "quietest" section on the page: fade-only reveal, NO translateY,
- * calmer stagger. Per Trust Psychology table: reduced motion at
- * financial-decision moments lowers perceived risk/pressure.
- */
 export function Pricing() {
   return (
-    <section className="section" aria-label="Pricing">
+    <section className="section bg-[#07080f] relative overflow-hidden" aria-label="Pricing" id="pricing">
       <div className="section-container">
-        <ScrollReveal variant="fadeOnly" className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold tracking-wider text-primary">
-            INVESTMENT
-          </p>
-          <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-text-primary">
-            Simple, transparent pricing.
+        <ScrollReveal variant="fadeOnly" className="mx-auto max-w-3xl text-center">
+          <div className="badge-pill mb-4">
+            <span>{pricingContent.eyebrow}</span>
+          </div>
+          <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
+            {pricingContent.headline}
           </h2>
-          <p className="mt-4 text-lg text-text-secondary">
-            Every project is scoped to your needs — these are starting
-            points, not final quotes.
+          <p className="mt-4 text-base text-slate-400 md:text-lg">
+            {pricingContent.subhead}
           </p>
         </ScrollReveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {pricingContent.map((tier, i) => (
+        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+          {pricingContent.tiers.map((tier, i) => (
             <m.div
-              key={tier.name}
+              key={tier.id}
               variants={fadeOnly}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: i * 0.1 }}
-              className={cn(
-                "flex flex-col rounded-lg p-8",
-                tier.featured
-                  ? "glass border-2 border-primary shadow-glow-subtle"
-                  : "glass border border-border"
-              )}
+              className={`rounded-2xl p-8 backdrop-blur-xl transition-all flex flex-col justify-between shadow-2xl relative ${
+                tier.popular
+                  ? "border-2 border-primary bg-gradient-to-b from-[#131732] to-[#0d1020] shadow-glow-primary scale-105 z-10"
+                  : "border border-white/10 bg-[#0e1122]/70 hover:border-white/20"
+              }`}
             >
-              {tier.featured && (
-                <span className="mb-4 w-fit rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white">
-                  Most Popular
-                </span>
-              )}
-              <h3 className="font-display text-xl font-semibold text-text-primary">
-                {tier.name}
-              </h3>
-              <p className="mt-2 text-sm text-text-secondary">
-                {tier.description}
-              </p>
-              <p className="mt-6 font-display text-3xl font-bold text-text-primary">
-                {tier.startingPrice}
-                {tier.startingPrice !== "Custom" && (
-                  <span className="text-sm font-normal text-text-secondary">
-                    {" "}
-                    starting
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span
+                    className={`rounded-full px-3 py-1 font-mono text-[10px] font-bold tracking-wider ${
+                      tier.popular
+                        ? "bg-primary text-white"
+                        : "bg-white/10 text-slate-300"
+                    }`}
+                  >
+                    {tier.badge}
                   </span>
-                )}
-              </p>
+                </div>
 
-              <ul className="mt-6 flex-1 space-y-3">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2.5">
-                    <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                    <span className="text-sm text-text-secondary">
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                <h3 className="font-display text-2xl font-bold text-white">
+                  {tier.name}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-400">
+                  {tier.subtitle}
+                </p>
 
-              <BookCallButton
-                variant={tier.featured ? "primary" : "secondary"}
-                size="md"
-                className="mt-8 w-full"
-              />
+                <div className="mt-6 border-y border-white/5 py-4">
+                  <p className="font-display text-3xl md:text-4xl font-extrabold text-white">
+                    {tier.price}
+                  </p>
+                  <p className="text-xs font-mono text-slate-400 mt-1">
+                    {tier.period}
+                  </p>
+                </div>
+
+                <ul className="mt-6 space-y-3">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2.5 text-xs text-slate-200">
+                      <CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-400 font-bold" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-white/5">
+                <BookCallButton
+                  variant={tier.popular ? "primary" : "secondary"}
+                  size="md"
+                  label={tier.cta}
+                  className="w-full justify-center"
+                />
+              </div>
             </m.div>
           ))}
         </div>

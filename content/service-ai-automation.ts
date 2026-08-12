@@ -1,59 +1,59 @@
 export const aiAutomationContent = {
   hero: {
-    eyebrow: "AI AUTOMATION",
-    headline: "Your business, running on autopilot.",
+    eyebrow: "CONSULTING PRACTICE: AUTONOMOUS SYSTEMS",
+    headline: "Autonomous AI & Multi-Agent Systems Engineering",
     subhead:
-      "We design and build AI-driven systems that qualify leads, book calls, and follow up — so nothing falls through the cracks, and nothing needs you to be online.",
+      "We architect custom, resilient multi-agent networks that reason, validate, qualify, and execute complex business logic 24/7 without human latency.",
   },
   capabilities: [
     {
-      title: "Lead Qualification",
+      title: "Autonomous Conversational Closers (WhatsApp & Web)",
       description:
-        "AI reads incoming inquiries and scores them instantly — hot leads get fast-tracked, everyone else gets nurtured automatically.",
+        "Natural language AI agents powered by Claude 3.5 & GPT-4o that answer complex customer queries, handle objections, and secure confirmed bookings with zero latency.",
     },
     {
-      title: "Automated Scheduling",
+      title: "Real-Time Intent Scoring & Lead Qualification",
       description:
-        "Calendly bookings triggered directly from qualified leads — no back-and-forth emails, no missed slots.",
+        "Instant multi-criteria evaluation of incoming prospects, routing high-value enterprise leads to partner calendars while nurturing mid-tier prospects.",
     },
     {
-      title: "WhatsApp Automation",
+      title: "Bi-Directional CRM & Database Telemetry",
       description:
-        "Order confirmations, follow-ups, and reminders sent automatically over WhatsApp — where your customers already are.",
+        "Automated extraction and sync of prospect metadata, interaction history, and deal stage across HubSpot, Notion, Airtable, and custom SQL databases.",
     },
     {
-      title: "Internal Workflow Automation",
+      title: "Enterprise Multi-Agent Orchestration (n8n & Python)",
       description:
-        "Beyond leads — automate reporting, reminders, and repetitive internal processes across your team.",
+        "Custom event-driven pipelines orchestrating complex backend tasks: proposal drafting, invoice generation, contract dispatch, and team Slack triggers.",
     },
     {
-      title: "CRM & Tool Integration",
+      title: "Zero-Downtime API & Webhook Gateways",
       description:
-        "We connect automation directly to the tools you already use, rather than forcing a full platform switch.",
+        "Enterprise-grade infrastructure with automatic retry logic, error alerting, and sub-second execution speeds.",
     },
     {
-      title: "Custom AI Workflows",
+      title: "100% Code & Workflow Ownership",
       description:
-        "Every business is different — we design the exact logic your operations need, not a one-size-fits-all template.",
+        "All workflows are built directly inside your cloud accounts or self-hosted servers with complete GitHub source code handover.",
     },
   ],
   processNote:
-    "Every automation project follows our standard 4-step process — Discover, Design, Automate, Scale. See the full breakdown on our homepage.",
+    "Every engagement follows our 4-Stage Consulting Delivery Framework: Diagnostic Audit ➔ Architecture Blueprint ➔ Production Deployment ➔ SLA Governance.",
   faqs: [
     {
-      question: "Do I need existing technical infrastructure for this to work?",
+      question: "Do we need existing technical infrastructure or developers?",
       answer:
-        "No. Most automations we build integrate with tools you likely already use — forms, WhatsApp, Calendly, spreadsheets — without requiring a technical overhaul.",
+        "No. Our consulting team handles the end-to-end architecture, API integrations, and edge-case testing. We connect directly to your existing tools (WhatsApp, CRM, Calendars).",
     },
     {
-      question: "How is this different from just hiring a virtual assistant?",
+      question: "How do you guarantee that the AI agent won't hallucinate or make false promises?",
       answer:
-        "Automation runs 24/7, doesn't make manual errors, and scales without additional cost as your lead volume grows — while a VA is still doing the work manually, just for you instead of by you.",
+        "We implement strict guardrails, deterministic fallback logic, and retrieval-augmented generation (RAG) anchored strictly to your business rules and validated knowledge bases.",
     },
     {
-      question: "What if my process changes after the automation is built?",
+      question: "What if our business operations or offerings change later?",
       answer:
-        "Automations are built to be modified — we design with change in mind, and can adjust workflows as your business evolves.",
+        "All workflows are modularly architected. We provide detailed operational documentation and admin control panels so you or your team can adjust prompts, rules, and schedules in seconds.",
     },
   ],
 };

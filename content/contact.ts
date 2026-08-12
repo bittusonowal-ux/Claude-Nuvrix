@@ -1,12 +1,12 @@
 export const contactContent = {
-  eyebrow: "GET IN TOUCH",
-  headline: "Let's build your system.",
+  eyebrow: "SYSTEMS CONSULTATION",
+  headline: "Initiate Your Architectural Diagnostic",
   subhead:
-    "Prefer to talk it through first? Book a free strategy call, or send a message below.",
-  afterBookingTitle: "What happens after you book",
+    "Schedule a confidential strategy call with our principal AI consultants, or submit your inquiry below for a response within 2 hours.",
+  afterBookingTitle: "What to expect on your diagnostic call:",
   afterBookingSteps: [
-    "We review your inquiry and confirm your slot within 2 hours.",
-    "On the call, we map your current workflow and biggest bottlenecks.",
-    "You'll get a clear plan and quote — no pressure to proceed.",
+    "Preliminary review of your active lead funnels and CRM architecture within 2 hours.",
+    "A 30-minute structured discovery session mapping your highest-ROI automation vectors.",
+    "An actionable system blueprint, timeline estimate, and transparent ROI calculation.",
   ],
 };

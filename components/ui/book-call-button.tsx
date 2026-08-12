@@ -7,8 +7,9 @@ import { cn } from "@/lib/utils";
 
 interface BookCallButtonProps {
   variant?: "primary" | "secondary" | "ghost";
-  size?: "md" | "lg";
+  size?: "md" | "lg" | "sm";
   className?: string;
+  label?: string;
   children?: React.ReactNode;
 }
 
@@ -22,19 +23,21 @@ export function BookCallButton({
   variant = "primary",
   size = "md",
   className,
-  children = "Book a Free Strategy Call",
+  label,
+  children,
 }: BookCallButtonProps) {
   const [open, setOpen] = useState(false);
+  const content = label || children || "Book a Free Strategy Call";
 
   return (
     <>
       <Button
         variant={variant}
-        size={size}
+        size={size === "sm" ? "md" : size}
         className={cn(className)}
         onClick={() => setOpen(true)}
       >
-        {children}
+        {content}
       </Button>
       <CalendlyModal open={open} onClose={() => setOpen(false)} />
     </>

@@ -1,17 +1,15 @@
 export const heroContent = {
-  eyebrow: "AI AUTOMATION AGENCY · INDIA",
-  headlineLine1: "Your Business,",
-  headlineLine2: "Running Itself",
+  eyebrow: "AI & DIGITAL SYSTEMS CONSULTING",
+  headlineLine1: "Architecting the Autonomous Enterprise,",
+  headlineLine2: "Engineered for Velocity.",
   subhead:
-    "Nuvrix builds AI automation, high-converting websites, and SEO systems so coaches and consultants stop chasing leads manually.",
-  trustMicrocopy: "Free 30-min call · No obligation · Response within 2 hours",
-  // Abstract automation flow shown in the dashboard mockup —
-  // deliberately generic enough to apply across personas, refined
-  // per-persona copy lives in the dedicated Workflow Showcase section.
+    "Nuvrix designs, deploys, and scales custom AI multi-agent workflows, ultra-fast web systems, and programmatic growth engines for modern leaders, B2B firms, and high-ticket practices.",
+  trustMicrocopy: "⚡ Direct Partner-Led Discovery · Zero Proprietary Lock-In · Rapid Deployment in 14 Days",
   flowNodes: [
-    { id: "lead", label: "New Lead" },
-    { id: "qualify", label: "AI Qualifies" },
-    { id: "book", label: "Books Call" },
-    { id: "close", label: "You Close" },
+    { id: "lead", label: "Inbound Lead", sub: "Omnichannel capture" },
+    { id: "agent", label: "Claude 3.5 Agent", sub: "Intent & budget scoring" },
+    { id: "enrich", label: "Data Enrichment", sub: "CRM & LinkedIn sync" },
+    { id: "schedule", label: "Auto-Scheduler", sub: "Instant WhatsApp slot" },
+    { id: "revenue", label: "Closed Revenue", sub: "Real-time telemetry" },
   ],
 };

@@ -1,26 +1,33 @@
 export const problemContent = {
-  eyebrow: "THE PROBLEM",
-  headline: "You didn't start your business to do this.",
+  eyebrow: "THE EXECUTIVE BOTTLENECK",
+  headline: "The Hidden Cost of Human Latency & Fragmented Systems",
   subhead:
-    "Manual follow-ups, missed leads, and repetitive admin work are quietly capping your growth.",
-  painPoints: [
+    "High-growth businesses do not fail from a lack of leads — they stall because operational overhead consumes the executive bandwidth required to close and scale.",
+  points: [
     {
-      icon: "inbox",
-      title: "Leads Slip Through",
+      metric: "71%",
+      metricLabel: "Lead Drop-Off Rate",
+      title: "Delayed Lead Response Latency",
       description:
-        "Inquiries sit unanswered for hours while you're busy delivering for existing clients.",
+        "When an inbound lead waits longer than 5 minutes for a response, qualification rates drop by over 80%. Manual triage creates friction that costs millions in lost deal pipeline.",
     },
     {
-      icon: "calendar",
-      title: "Manual Scheduling Chaos",
+      metric: "22+ hrs",
+      metricLabel: "Wasted Per Week / Team",
+      title: "Repetitive Data Entry & Admin Overhead",
       description:
-        "Back-and-forth emails just to book a single call — time you'll never get back.",
+        "Talented knowledge workers spend their highest-leverage hours manually copying lead data, drafting repetitive follow-ups, and updating disjointed CRM spreadsheets.",
     },
     {
-      icon: "repeat",
-      title: "Repetitive Busywork",
+      metric: "3.2x",
+      metricLabel: "Customer Acquisition Cost",
+      title: "Slow, Outdated Digital Real Estate",
       description:
-        "The same follow-ups, reminders, and updates, done manually, every single day.",
+        "Slow WordPress sites, broken mobile booking funnels, and zero conversion tracking bleed marketing spend and damage institutional credibility before a prospect ever books a call.",
     },
   ],
+  callout: {
+    badge: "THE NUVRIX PARADIGM",
+    text: "We replace manual, error-prone human handoffs with autonomous multi-agent pipelines that operate 24/7 with zero latency.",
+  },
 };

@@ -1,32 +1,32 @@
 export const faqContent = [
   {
-    question: "Will AI automation make my business feel less personal?",
+    question: "How is Nuvrix different from traditional marketing or development agencies?",
     answer:
-      "No — it's the opposite. AI handles the repetitive parts (qualifying, scheduling, reminders) so you have more time and energy for the conversations that actually need your personal touch.",
+      "Traditional agencies build static websites and leave you to manually follow up with leads and coordinate operations. Nuvrix acts as a digital systems consulting firm: we architect autonomous multi-agent pipelines (Claude 3.5, GPT-4o, n8n) directly integrated with custom Next.js 15 web engines, eliminating operational latency and automating lead triage, booking, and CRM sync 24/7.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "Do we own our code, workflows, and intellectual property?",
     answer:
-      "Most automation projects go live within 2-4 weeks. Website builds typically take 3-5 weeks depending on scope. We'll give you an exact timeline on your strategy call.",
+      "Yes, 100%. We do not lock you into proprietary platforms or hold your systems hostage. All Next.js source code is pushed directly to your private GitHub repository, and all automation blueprints (n8n/Make) are deployed directly onto your own cloud accounts or servers.",
   },
   {
-    question: "Do I need to be technical to work with Nuvrix?",
+    question: "How long does a typical deployment take?",
     answer:
-      "Not at all. We handle the technical build entirely — you'll get a system that just works, explained in plain language, not jargon.",
+      "Unlike legacy IT consultancies that take 6 to 9 months, our structured 4-stage consulting framework allows us to deliver full production systems in 14 to 21 business days with zero downtime to your existing business operations.",
   },
   {
-    question: "What happens after I book a strategy call?",
+    question: "How do your AI agents integrate with our existing CRM and tools?",
     answer:
-      "We'll spend 30 minutes understanding your current workflow and goals, then follow up with a clear plan and quote — no pressure, no obligation to proceed.",
+      "Our multi-agent architectures connect natively via APIs and webhooks to any modern stack — including HubSpot, Salesforce, Notion, Airtable, Google Sheets, Slack, Stripe, and the official WhatsApp Business API.",
   },
   {
-    question: "Can you work with my existing tools and systems?",
+    question: "What about data security, privacy, and LLM confidentiality?",
     answer:
-      "In most cases, yes. We design automations to integrate with what you already use rather than forcing a full replacement, wherever technically possible.",
+      "We adhere to strict data segregation and privacy standards. Your customer data is never used to train public models. We utilize enterprise API endpoints with zero-data-retention compliance policies.",
   },
   {
-    question: "What if I only need one service, not all three?",
+    question: "How do we get started?",
     answer:
-      "That's completely fine — AI Automation, Website Development, and SEO all work as standalone services. Many clients start with one and add others later.",
+      "The first step is a complimentary 30-minute Systems Diagnostic & Architecture Call. We review your current workflows, calculate your exact ROI feasibility, and present an actionable blueprint with zero obligation.",
   },
 ];
