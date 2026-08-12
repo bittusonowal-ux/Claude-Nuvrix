@@ -2,35 +2,29 @@ import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp";
 import { MotionProvider } from "@/components/motion/motion-provider";
 import { siteConfig } from "@/lib/site-config";
 import { getOrganizationSchema } from "@/lib/json-ld";
 import "./globals.css";
 
-// Display font — headings, hero copy. Geometric, modern, matches
-// Linear/Vercel-tier aesthetic per blueprint typography spec.
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800", "900"],
 });
 
-// Body font — paragraphs, UI labels, form inputs. Highly legible at small sizes.
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
-// Metadata is expanded fully in the SEO implementation step (Step 7).
-// Placeholder here keeps every page valid in the meantime.
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — AI Automation Agency`,
+    default: `${siteConfig.name} — Autonomous AI & Digital Systems Consulting`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -52,7 +46,7 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — AI Automation Agency`,
+    title: `${siteConfig.name} — Autonomous AI & Digital Systems Consulting`,
     description: siteConfig.description,
     images: [
       {
@@ -65,15 +59,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — AI Automation Agency`,
+    title: `${siteConfig.name} — Autonomous AI & Digital Systems Consulting`,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
     creator: siteConfig.twitterHandle,
   },
   icons: {
-    icon: [{ url: "/images/nuvrix-logo.svg", type: "image/svg+xml" }],
-    shortcut: "/images/nuvrix-logo.svg",
-    apple: "/apple-touch-icon.png",
+    icon: [{ url: "/images/nuvrix-symbol.svg", type: "image/svg+xml" }],
+    shortcut: "/images/nuvrix-symbol.svg",
+    apple: "/images/nuvrix-symbol.svg",
   },
   alternates: {
     canonical: siteConfig.url,
@@ -101,7 +95,6 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
-          <FloatingWhatsApp />
         </MotionProvider>
       </body>
     </html>

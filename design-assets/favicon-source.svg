@@ -1,11 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6C63FF"/>
-      <stop offset="100%" stop-color="#00D4FF"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="14" fill="#09090B"/>
-  <rect width="64" height="64" rx="14" fill="url(#grad)" opacity="0.12"/>
-  <text x="32" y="43" font-family="Arial, sans-serif" font-weight="700" font-size="30" fill="#FFFFFF" text-anchor="middle">N</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <rect width="500" height="500" rx="100" fill="#070709" />
+  <path
+    d="M 135 60 L 235 60 L 375 360 L 375 110 L 430 110 L 430 440 L 330 440 L 190 140 L 190 390 L 135 390 Z"
+    fill="#6366F1"
+  />
+  <path d="M 190 170 L 310 270 L 190 270 Z" fill="#070709" />
+  <path d="M 375 330 L 255 230 L 375 230 Z" fill="#070709" />
+  <path
+    d="M 85 180 L 115 180 L 175 240 L 175 300"
+    stroke="#818CF8"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="85" cy="180" r="16" fill="#070709" stroke="#818CF8" stroke-width="12" />
+  <path
+    d="M 85 270 L 125 270 L 175 320 L 175 360"
+    stroke="#818CF8"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="85" cy="270" r="16" fill="#070709" stroke="#818CF8" stroke-width="12" />
+  <path
+    d="M 115 350 L 145 350 L 165 370 L 165 410"
+    stroke="#818CF8"
+    stroke-width="16"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="115" cy="350" r="16" fill="#070709" stroke="#818CF8" stroke-width="12" />
+  <circle cx="175" cy="300" r="12" fill="#818CF8" />
+  <circle cx="175" cy="360" r="12" fill="#818CF8" />
+  <circle cx="165" cy="410" r="12" fill="#818CF8" />
 </svg>

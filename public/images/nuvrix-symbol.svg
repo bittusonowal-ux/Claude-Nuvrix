@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none" className="h-full w-full">
+  <defs>
+    <linearGradient id="nuvrixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#7C74FF" />
+      <stop offset="100%" stopColor="#554BFF" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  {/* Main Stylized "N" Monogram */}
+  <path
+    d="M 135 60 L 235 60 L 375 360 L 375 110 L 430 110 L 430 440 L 330 440 L 190 140 L 190 390 L 135 390 Z"
+    fill="url(#nuvrixGrad)"
+    style={{ fillRule: "nonzero" }}
+  />
+
+  {/* Inner Lightning / Cutout accent */}
+  <path
+    d="M 190 170 L 310 270 L 190 270 Z"
+    fill="#070709"
+  />
+  <path
+    d="M 375 330 L 255 230 L 375 230 Z"
+    fill="#070709"
+  />
+
+  {/* Circuit Trace Lines & Nodes */}
+  {/* Circuit Trace 1 (Top Left) */}
+  <path
+    d="M 85 180 L 115 180 L 175 240 L 175 300"
+    stroke="#818CF8"
+    strokeWidth="14"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+  <circle cx="85" cy="180" r="14" fill="#070709" stroke="#818CF8" strokeWidth="10" />
+
+  {/* Circuit Trace 2 (Middle Left) */}
+  <path
+    d="M 85 270 L 125 270 L 175 320 L 175 360"
+    stroke="#818CF8"
+    strokeWidth="14"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+  <circle cx="85" cy="270" r="14" fill="#070709" stroke="#818CF8" strokeWidth="10" />
+
+  {/* Circuit Trace 3 (Bottom Left) */}
+  <path
+    d="M 115 350 L 145 350 L 165 370 L 165 410"
+    stroke="#818CF8"
+    strokeWidth="14"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+  <circle cx="115" cy="350" r="14" fill="#070709" stroke="#818CF8" strokeWidth="10" />
+
+  {/* Bottom Trace Node Terminations */}
+  <circle cx="175" cy="300" r="10" fill="#818CF8" />
+  <circle cx="175" cy="360" r="10" fill="#818CF8" />
+  <circle cx="165" cy="410" r="10" fill="#818CF8" />
+</svg>

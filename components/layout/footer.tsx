@@ -6,26 +6,25 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-white/10 bg-[#06070b]">
       <div className="section-container grid gap-12 py-16 md:grid-cols-4">
         <div className="md:col-span-1">
           <Logo />
-          <p className="mt-4 max-w-xs text-sm text-text-secondary">
-            AI automation, websites, and SEO built for coaches, consultants,
-            and growing businesses across India.
+          <p className="mt-4 max-w-xs text-xs md:text-sm leading-relaxed text-slate-400">
+            Autonomous multi-agent AI workflows, custom Next.js 15 web engines, and search intelligence engineered for modern high-velocity enterprises.
           </p>
         </div>
 
-        <nav aria-label="Services">
-          <h3 className="mb-4 text-sm font-semibold text-text-primary">
-            Services
+        <nav aria-label="Practices">
+          <h3 className="mb-4 text-xs font-mono font-bold tracking-wider text-white uppercase">
+            Consulting Practices
           </h3>
           <ul className="space-y-3">
-            {footerLinks.services.map((link) => (
+            {footerLinks.practices.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  className="text-xs text-slate-400 transition-colors hover:text-primary-light"
                 >
                   {link.label}
                 </Link>
@@ -34,16 +33,16 @@ export function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Company">
-          <h3 className="mb-4 text-sm font-semibold text-text-primary">
-            Company
+        <nav aria-label="Organization">
+          <h3 className="mb-4 text-xs font-mono font-bold tracking-wider text-white uppercase">
+            Organization
           </h3>
           <ul className="space-y-3">
-            {footerLinks.company.map((link) => (
+            {footerLinks.organization.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                  className="text-xs text-slate-400 transition-colors hover:text-primary-light"
                 >
                   {link.label}
                 </Link>
@@ -53,36 +52,29 @@ export function Footer() {
         </nav>
 
         <div>
-          <h3 className="mb-4 text-sm font-semibold text-text-primary">
-            Get in touch
+          <h3 className="mb-4 text-xs font-mono font-bold tracking-wider text-white uppercase">
+            Executive Inquiries
           </h3>
-          <ul className="space-y-3 text-sm text-text-secondary">
+          <ul className="space-y-3 text-xs text-slate-400">
             <li>
               <a
                 href={`mailto:${footerLinks.contact.email}`}
-                className="transition-colors hover:text-text-primary"
+                className="transition-colors hover:text-primary-light font-mono"
               >
                 {footerLinks.contact.email}
               </a>
             </li>
-            <li>
-              <a
-                href={footerLinks.contact.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-text-primary"
-              >
-                WhatsApp Us
-              </a>
+            <li className="pt-2 text-slate-400">
+              Response SLA: Confidential review within 2 business hours.
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-border py-6">
-        <div className="section-container flex flex-col items-center justify-between gap-4 text-xs text-text-secondary sm:flex-row">
-          <p>© {year} Nuvrix. All rights reserved.</p>
-          <p>Built in India, for businesses going global.</p>
+      <div className="border-t border-white/5 py-6">
+        <div className="section-container flex flex-col items-center justify-between gap-4 text-xs text-slate-400 sm:flex-row">
+          <p>© {year} Nuvrix Systems Consulting. All rights reserved.</p>
+          <p className="font-mono text-[11px]">Engineered in India · Serving Global Enterprises</p>
         </div>
       </div>
     </footer>

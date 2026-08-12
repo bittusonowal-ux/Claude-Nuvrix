@@ -1,16 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import { m } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { BookCallButton } from "@/components/ui/book-call-button";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
-import { WHATSAPP_URL } from "@/content/navigation";
 
 export function FinalCTA() {
   return (
     <section
       className="relative overflow-hidden py-28 lg:py-36 border-t border-white/10 bg-[#07080f]"
-      aria-label="Book your systems diagnostic call"
+      aria-label="Schedule executive consultation"
     >
       <div
         className="absolute inset-0 pointer-events-none"
@@ -24,14 +24,14 @@ export function FinalCTA() {
       <div className="section-container relative text-center">
         <ScrollReveal>
           <div className="badge-pill mb-6 mx-auto">
-            <span>TRANSFORMATION STARTS HERE</span>
+            <span>STRATEGIC ENGAGEMENT</span>
           </div>
 
           <h2 className="mx-auto max-w-3xl font-display text-3xl md:text-5xl font-extrabold tracking-tight text-white">
             Ready to Transition to Autonomous Digital Systems?
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base md:text-xl leading-relaxed text-slate-300">
-            Schedule a complimentary 30-minute Systems Diagnostic &amp; Architecture Call. We&apos;ll map your exact automation blueprint with zero obligation.
+            Schedule a confidential 30-minute Systems Diagnostic &amp; Architecture Session. We&apos;ll assess your operational bottlenecks and map an actionable multi-agent implementation blueprint.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -46,13 +46,14 @@ export function FinalCTA() {
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
               className="rounded-xl"
             >
-              <BookCallButton size="lg" label="Schedule Diagnostic Call" />
+              <BookCallButton size="lg" label="Schedule Executive Consultation" />
             </m.div>
-            <Button asChild variant="secondary" size="lg" className="border-white/10 hover:border-primary/40">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                <span>Chat on WhatsApp</span>
-                <span className="text-xs text-emerald-400 font-mono">● Online</span>
-              </a>
+
+            <Button asChild variant="secondary" size="lg" className="border-white/10 hover:border-primary/40 bg-white/5">
+              <Link href="/work" className="flex items-center gap-2">
+                <span>Review Verified Case Studies</span>
+                <span>→</span>
+              </Link>
             </Button>
           </div>
 

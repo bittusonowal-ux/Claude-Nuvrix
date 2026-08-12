@@ -188,7 +188,7 @@ export function ContactForm() {
       <div aria-live="polite">
         {status === "error" && (
           <p role="alert" className="text-sm text-red-400">
-            Something went wrong. Please try again or reach us on WhatsApp.
+            Something went wrong. Please try again or email us directly at hello@nuvrix.in.
           </p>
         )}
       </div>

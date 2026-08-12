@@ -4,33 +4,29 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: "Services", href: "/services" },
-  { label: "Work", href: "/work" },
-  { label: "About", href: "/about" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "What We Do", href: "/services" },
+  { label: "How We Think", href: "/#workflows" },
+  { label: "Client Impact", href: "/work" },
+  { label: "Who We Are", href: "/about" },
+  { label: "Engagement Models", href: "/pricing" },
 ];
 
 export const footerLinks = {
-  services: [
-    { label: "AI Automation", href: "/services/ai-automation" },
-    { label: "Website Development", href: "/services/website-development" },
-    { label: "SEO", href: "/services/seo" },
+  practices: [
+    { label: "Autonomous AI & Multi-Agent Systems", href: "/services/ai-automation" },
+    { label: "High-Performance Next.js 15 Web Engines", href: "/services/website-development" },
+    { label: "Search Intelligence & Programmatic Growth", href: "/services/seo" },
   ],
-  company: [
-    { label: "About", href: "/about" },
-    { label: "Work", href: "/work" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Blog", href: "/blog" },
+  organization: [
+    { label: "Who We Are", href: "/about" },
+    { label: "Client Impact & Outcomes", href: "/work" },
+    { label: "Engagement Models", href: "/pricing" },
+    { label: "Systems Architecture Audit", href: "/contact" },
   ],
   contact: {
     email: "hello@nuvrix.in",
-    whatsapp: "https://wa.me/910000000000", // placeholder — real number pending
   },
 };
 
-// Placeholder — replace with real Calendly scheduling link when available
+// Calendly scheduling endpoint for executive discovery sessions
 export const CALENDLY_URL = "https://calendly.com/nuvrix/strategy-call";
-
-// Placeholder — replace with real WhatsApp Business number
-export const WHATSAPP_URL =
-  "https://wa.me/910000000000?text=Hi%20Nuvrix%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services.";

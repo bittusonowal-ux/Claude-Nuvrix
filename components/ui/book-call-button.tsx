@@ -14,10 +14,9 @@ interface BookCallButtonProps {
 }
 
 /**
- * The single correct way to render a "Book a Call" CTA anywhere on the
+ * The single correct way to render an executive consultation CTA anywhere on the
  * site. Opens CalendlyModal (lazy-loads the iframe only on click)
- * rather than linking directly to Calendly's site — keeps visitors on
- * Nuvrix, and matches the Performance Strategy's lazy-load requirement.
+ * rather than linking directly to Calendly's site.
  */
 export function BookCallButton({
   variant = "primary",
@@ -27,7 +26,7 @@ export function BookCallButton({
   children,
 }: BookCallButtonProps) {
   const [open, setOpen] = useState(false);
-  const content = label || children || "Book a Free Strategy Call";
+  const content = label || children || "Schedule Executive Consultation";
 
   return (
     <>

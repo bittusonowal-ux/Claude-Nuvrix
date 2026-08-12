@@ -5,9 +5,9 @@ import { FinalCTA } from "@/components/sections/final-cta/final-cta";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Our Work",
+  title: "Client Impact & Case Studies — Proven Enterprise ROI",
   description:
-    "Case studies and examples of AI automation, website, and SEO work by Nuvrix.",
+    "Explore quantified outcomes achieved through Nuvrix autonomous multi-agent pipelines, custom web flagships, and growth engines.",
   alternates: {
     canonical: `${siteConfig.url}/work`,
   },
@@ -17,20 +17,21 @@ export default function WorkPage() {
   return (
     <main id="main-content" className="pt-32">
       <section className="section-container section !pt-0">
-        <ScrollReveal className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold tracking-wider text-primary">
-            OUR WORK
-          </p>
-          <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-text-primary">
-            Real challenges, real systems.
+        <ScrollReveal className="mx-auto max-w-3xl text-center">
+          <div className="badge-pill mb-4 mx-auto">
+            <span>CLIENT IMPACT &amp; CASE STUDIES</span>
+          </div>
+          <h1 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+            Engineering Quantified Enterprise Outcomes
           </h1>
-          <p className="mt-4 text-lg text-text-secondary">
-            Illustrative examples of the kind of work we do — replaced with
-            real client results as projects complete.
+          <p className="mt-4 text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Real architectural blueprints deployed for market leaders. Every transformation is engineered with concrete ROI benchmarks and strict delivery SLAs.
           </p>
         </ScrollReveal>
 
-        <WorkGrid />
+        <div className="mt-12">
+          <WorkGrid />
+        </div>
       </section>
 
       <FinalCTA />
