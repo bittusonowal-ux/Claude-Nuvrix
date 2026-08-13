@@ -3,99 +3,131 @@
 import Link from "next/link";
 import { m } from "framer-motion";
 import { BookCallButton } from "@/components/ui/book-call-button";
-import { ParticleField3D } from "@/components/sections/hero/particle-field-3d";
+import { SoothingWaveCanvas } from "@/components/sections/hero/soothing-wave-canvas";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 export function Hero() {
   const reducedMotion = useReducedMotion();
 
+  const trustMetrics = [
+    {
+      label: "Velocity",
+      value: "14-Day Delivery Sprints",
+      accent: "bg-indigo-400",
+      glow: "shadow-[0_0_10px_rgba(129,140,248,0.7)]",
+    },
+    {
+      label: "Ownership",
+      value: "100% IP Sovereignty",
+      accent: "bg-emerald-400",
+      glow: "shadow-[0_0_10px_rgba(52,211,153,0.7)]",
+    },
+    {
+      label: "Architecture",
+      value: "Deterministic Multi-Agent AI",
+      accent: "bg-cyan-400",
+      glow: "shadow-[0_0_10px_rgba(34,211,238,0.7)]",
+    },
+    {
+      label: "Performance",
+      value: "Sub-Second Web Platforms",
+      accent: "bg-purple-400",
+      glow: "shadow-[0_0_10px_rgba(192,132,252,0.7)]",
+    },
+  ];
+
   return (
     <section
-      className="relative flex min-h-[92svh] items-center overflow-hidden pt-28 pb-16 bg-[#070709]"
+      className="relative flex min-h-[92svh] items-center justify-center overflow-hidden pt-32 pb-20 bg-[#070709]"
       aria-label="Hero"
     >
-      {/* 3D Motion Particle Background */}
-      <ParticleField3D reduced={reducedMotion} />
+      {/* TCS-Style Soothing Ambient Wave & Light Flow Canvas */}
+      <SoothingWaveCanvas reduced={reducedMotion} />
 
-      <div className="section-container relative z-10 grid items-center gap-12 lg:grid-cols-12">
-        {/* Left Monumental Typography (Accenture Masterpiece Style) */}
-        <div className="lg:col-span-7 select-none">
-          <m.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-display font-black tracking-tight uppercase leading-[0.92] text-white text-5xl sm:text-7xl md:text-8xl xl:text-[5.75rem]"
-          >
-            <span className="block">TOGETHER WE</span>
-            <span className="block mt-2 sm:mt-3">
-              REIN
-              <span className="inline-flex items-center text-primary-light font-black tracking-tighter px-0.5 transform -skew-x-6 drop-shadow-[0_0_24px_rgba(99,102,241,0.8)]">
-                &gt;
-              </span>
-              ENT
-            </span>
-          </m.div>
-
-          <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-8 flex items-center gap-3 text-xs font-mono tracking-widest text-slate-400 uppercase"
-          >
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>AI &amp; DIGITAL SYSTEMS CONSULTING · ENTERPRISE SCALE</span>
-          </m.div>
-        </div>
-
-        {/* Right Accenture-Style Editorial Statement & Consulting Actions */}
+      <div className="section-container relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6">
+        {/* Top Enterprise Badge */}
         <m.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="lg:col-span-5 rounded-2xl border border-white/10 bg-[#0d0f1c]/80 p-8 md:p-10 backdrop-blur-2xl shadow-2xl relative"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2.5 rounded-full border border-indigo-500/25 bg-indigo-950/40 px-4 py-1.5 backdrop-blur-xl shadow-[0_0_20px_rgba(99,102,241,0.15)]"
         >
-          {/* Accent Line */}
-          <div className="h-1 w-12 bg-primary rounded-full mb-6 shadow-glow-primary" />
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+          </span>
+          <span className="text-xs font-mono font-medium uppercase tracking-widest text-indigo-200">
+            Next-Gen Enterprise Systems &amp; AI Consulting
+          </span>
+        </m.div>
 
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight">
-            Shaping the Autonomous Enterprise
-          </h2>
+        {/* Grand Authoritative Headline */}
+        <m.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-8 font-display font-extrabold tracking-tight text-white text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] leading-[1.08] select-none"
+        >
+          Engineering Autonomous Intelligence for the{" "}
+          <span className="bg-gradient-to-r from-indigo-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent">
+            Modern Enterprise
+          </span>
+        </m.h1>
 
-          <p className="mt-4 text-sm md:text-base leading-relaxed text-slate-300">
-            In an era of accelerating complexity, operational reinvention is the ultimate competitive advantage. Nuvrix architects deterministic multi-agent AI ecosystems, sub-second web platforms, and growth intelligence.
-          </p>
+        {/* Clear, High-Impact Executive Statement */}
+        <m.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="mt-6 text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal"
+        >
+          We architect deterministic multi-agent AI ecosystems, sub-second web platforms, and automated intelligence pipelines with enterprise precision and guaranteed velocity.
+        </m.p>
 
-          <div className="mt-8 space-y-4">
-            <BookCallButton
-              size="lg"
-              label="Schedule Executive Consultation"
-              className="w-full justify-center shadow-glow-primary"
-            />
+        {/* Executive Action CTAs */}
+        <m.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5"
+        >
+          <BookCallButton
+            size="lg"
+            label="Schedule Executive Consultation"
+            className="w-full sm:w-auto shadow-glow-primary hover:shadow-[0_0_36px_rgba(99,102,241,0.6)] transition-all duration-300 text-sm md:text-base font-semibold"
+          />
 
-            <div className="pt-2 flex items-center justify-between">
-              <Link
-                href="/services"
-                className="group inline-flex items-center gap-2 text-sm font-semibold text-primary-light hover:text-white transition-colors"
-              >
-                <span>See what we do</span>
-                <span className="transition-transform group-hover:translate-x-1 font-bold">
-                  &gt;
-                </span>
-              </Link>
+          <Link
+            href="/services"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 h-13 rounded-md font-semibold text-sm md:text-base text-slate-200 border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-indigo-500/40 hover:text-white backdrop-blur-md transition-all duration-300"
+          >
+            <span>Explore Capabilities</span>
+            <span className="text-indigo-400 transition-transform duration-200 group-hover:translate-x-1 font-bold">
+              →
+            </span>
+          </Link>
+        </m.div>
 
-              <Link
-                href="/work"
-                className="text-xs font-mono text-slate-400 hover:text-slate-200 transition-colors"
-              >
-                Explore Client Impact →
-              </Link>
+        {/* Proof / Trust Pillar Indicators */}
+        <m.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.45 }}
+          className="mt-16 pt-8 border-t border-white/[0.08] grid grid-cols-2 md:grid-cols-4 gap-6 text-left"
+        >
+          {trustMetrics.map((metric) => (
+            <div key={metric.label} className="flex items-center gap-3">
+              <div className={`h-2.5 w-2.5 rounded-full ${metric.accent} ${metric.glow}`} />
+              <div>
+                <p className="text-[11px] font-mono uppercase tracking-wider text-slate-400">
+                  {metric.label}
+                </p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-100 whitespace-nowrap">
+                  {metric.value}
+                </p>
+              </div>
             </div>
-          </div>
-
-          <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Guaranteed 14-Day Delivery</span>
-            <span className="text-emerald-400">● 100% IP Sovereignty</span>
-          </div>
+          ))}
         </m.div>
       </div>
     </section>
